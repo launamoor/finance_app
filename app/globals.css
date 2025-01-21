@@ -1,42 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Beige */
+  --color-beige-500: #98908B;
+  --color-beige-100: #F8F4F0;
+
+  /* Grey */
+  --color-grey-900: #201F24;
+  --color-grey-500: #696868;
+  --color-grey-300: #B3B3B3;
+  --color-grey-100: #F2F2F2;
+
+  /* Secondary Colors */
+  --color-green: #277C78;
+  --color-yellow: #F2CDAC;
+  --color-cyan: #82C9D7;
+  --color-navy: #626070;
+
+  /* Other Colors */
+  --color-purple: #AF81BA;
+  --color-turquoise: #597C7C;
+  --color-brown: #93674F;
+  --color-magenta: #934F6F;
+  --color-blue: #3F82B2;
+  --color-navy-grey: #97A0AC;
+  --color-army-green: #7F9161;
+  --color-gold: #CAB361;
+  --color-orange: #BE6C49;
+
+  /* Color White */
+  --color-white: #FFF;
+
+  /* Typography */
+  /* Text Preset 1 */
+  --size-preset-1: 3.2rem;
+  --line-height-preset-1: 1.2;
+  --letter-spacing-preset-1: 0;
+
+  /* Text Preset 2 */
+  --size-preset-2: 2rem;
+  --line-height-preset-2: 1.2;
+  --letter-spacing-preset-2: 0;
+
+  /* Text Preset 3 */
+  --size-preset-3: 1.6rem;
+  --line-height-preset-3: 1.5;
+  --letter-spacing-preset-3: 0;
+
+  /* Text Preset 4 */
+  --size-preset-4: 1.4rem;
+  --line-height-preset-4: 1.5;
+  --letter-spacing-preset-4: 0;
+
+  /* Text Preset 5 */
+  --size-preset-5: 1.2rem;
+  --line-height-preset-5: 1.5;
+  --letter-spacing-preset-5: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
+*,
+*::before,
+*::after {
   margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+body {
+  font-family: 'Public Sans', sans-serif;
 }
