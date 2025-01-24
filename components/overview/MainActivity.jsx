@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
-const MainActivity = () => {
-  return (
-    <div>MainActivity</div>
-  )
-}
+const MainActivity = ({ children }) => {
+  return <div>{children}</div>;
+};
 
-export default MainActivity
+export default MainActivity;

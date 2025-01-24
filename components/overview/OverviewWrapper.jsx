@@ -1,10 +1,8 @@
-import React from 'react'
-import styles from './styles/OverviewWrapper.module.css'
+import React from "react";
+import styles from "./styles/OverviewWrapper.module.css";
 
-const OverviewWrapper = ({children}) => {
-  return (
-    <div className={styles.wrapper}>{children}</div>
-  )
-}
+const OverviewWrapper = () => {
+  return <div className={styles.wrapper}>Overview</div>;
+};
 
-export default OverviewWrapper
+export default OverviewWrapper;

@@ -1,55 +1,193 @@
-.sidebarOuterWrapper {
+.sidebarOuterWrapper,
+.sidebarOuterWrapperHidden {
+  flex-basis: 30rem;
+  background-color: var(--color-grey-900);
+  height: 100vh;
+  color: var(--color-white);
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  animation: sidebarOpen 0.5s forwards;
+  overflow: hidden;
+}
+
+@keyframes sidebarOpen {
+  0% {
+    flex-basis: 9rem;
+  }
+  100% {
     flex-basis: 30rem;
-    background-color: var(--color-grey-900);
-    height: 100vh;
-    color: var(--color-white);
-    border-top-right-radius: 12px;
-    border-bottom-right-radius: 12px;
+  }
+}
+
+@keyframes sidebarClose {
+  0% {
+    flex-basis: 30rem;
+  }
+  100% {
+    flex-basis: 9rem;
+  }
+}
+
+.sidebarOuterWrapperHidden {
+  flex-basis: 5rem;
+  animation: sidebarClose 0.3s forwards;
 }
 
 .sidebarInnerWrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  height: 100%;
+  position: relative;
 }
 
-.sidebarHeader{
-    padding: 4rem 0 4rem 3.2rem;
+.sidebarHeader {
+  padding: 4rem 0 4rem 3.2rem;
+}
+
+.logo {
+  position: absolute;
+  top: 4rem;
+  left: 3.8rem;
 }
 
 .sidebarNav {
-    /*  */
+  margin-top: 2.5rem;
 }
 
 .navList {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
 
-.navItem {
-    background-color: inherit;
-    color: var(--color-grey-300);
-    width: 90%;
-    height: 50px;
-    padding-left: 3.5rem;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    display: flex;
-    gap: 1.6rem;
-    align-items: center;
-    font-size: var(--size-preset-3);
-    font-weight: bold;
+.navButton,
+.navButtonActive {
+  border: none;
+  background-color: inherit;
+  color: var(--color-grey-300);
+  width: 90%;
+  height: 50px;
+  padding-left: 3.5rem;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+  font-size: var(--size-preset-3);
+  font-weight: bold;
 
-    transition: all .15s ease;
+  transition: all 0.15s ease;
 }
 
-.navItem:hover {
-    background-color: var(--color-beige-100);
-    color: var(--color-grey-900);
-    cursor: pointer;
+.navButtonActive {
+  background-color: var(--color-beige-100);
+  color: var(--color-grey-900);
+  cursor: pointer;
+  position: relative;
 }
 
-.sidebarNav {
-    /*  */
+.navButtonActive::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.5rem;
+  height: 100%;
+  background-color: var(--color-green);
+}
+
+.navItem:hover .navButton {
+  color: var(--color-grey-100);
+  cursor: pointer;
+}
+
+.navItem svg {
+  fill: var(--color-grey-300);
+  transition: all 0.15s ease;
+}
+
+.navItem:hover .navButton svg {
+  fill: var(--color-grey-100);
+}
+
+.navItem .navButtonActive svg {
+  fill: var(--color-green);
+}
+
+.sidebarMinimizeButton,
+.sidebarMinimizeButtonHidden {
+  margin-top: auto;
+  margin-bottom: 6rem;
+  display: flex;
+  align-items: center;
+  background-color: inherit;
+  padding: 1.6rem 0 1.6rem 3.2rem;
+  border: none;
+  cursor: pointer;
+}
+
+.sidebarMinimizeButton {
+  transform: rotate(0deg);
+  transition: all 0.4s ease;
+}
+
+.sidebarMinimizeButtonHidden {
+  transform: rotate(-180deg);
+  transition: all 0.5s ease;
+}
+
+.sidebarMinimizeButton:hover .minimizeButtonContent,
+.sidebarMinimizeButtonHidden:hover .minimizeButtonContent {
+  color: var(--color-grey-100);
+}
+
+.sidebarMinimizeButton:hover .minimizeButtonContent svg,
+.sidebarMinimizeButtonHidden:hover .minimizeButtonContent svg {
+  fill: var(--color-grey-100);
+}
+
+.minimizeButtonContent {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  font-size: var(--size-preset-3);
+  font-weight: bold;
+  color: var(--color-grey-300);
+  transition: all 0.15s ease;
+}
+
+.minimizeButtonContent svg {
+  fill: var(--color-grey-300);
+  transition: all 0.15s ease;
+}
+
+.hidden {
+  white-space: nowrap;
+  animation: hide 0.15s forwards;
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    width: 0;
+  }
+}
+
+.reveal {
+  white-space: nowrap;
+  animation: reveal 0.8s forwards;
+}
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    width: auto;
+  }
 }
