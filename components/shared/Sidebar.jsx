@@ -12,10 +12,12 @@ import NavReccuringBillsIcon from "./IconComponents/NavReccuringBillsIcon";
 import MinimizeButtonIcon from "./IconComponents/MinimizeButtonIcon";
 
 import { useState } from "react";
+import { useNavigationContext } from "@/contexts/navigationContext";
 
 const Sidebar = () => {
   const [sidebarHidden, setSidebarHidden] = useState(false);
-  const [activeTab, setActiveTab] = useState("overview");
+
+  const { activeTab, setActiveTab } = useNavigationContext();
 
   const handleTabChange = (e) => {
     setActiveTab(e.currentTarget.id);
