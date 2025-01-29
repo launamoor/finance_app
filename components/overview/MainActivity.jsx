@@ -13,37 +13,37 @@ const MainActivity = () => {
   switch (activeTab) {
     case "overview":
       return (
-        <main>
+        <main style={{ width: "100%" }}>
           <OverviewWrapper />
         </main>
       );
     case "transactions":
       return (
-        <main>
+        <main style={{ width: "100%" }}>
           <TransactionsWrapper />
         </main>
       );
     case "budgets":
       return (
-        <main>
+        <main style={{ width: "100%" }}>
           <BudgetsWrapper />
         </main>
       );
     case "pots":
       return (
-        <main>
+        <main style={{ width: "100%" }}>
           <PotsWrapper />
         </main>
       );
     case "bills":
       return (
-        <main>
+        <main style={{ width: "100%" }}>
           <BillsWrapper />
         </main>
       );
     default:
       return (
-        <main>
+        <main style={{ width: "100%" }}>
           <OverviewWrapper />
         </main>
       );

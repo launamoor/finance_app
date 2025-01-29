@@ -1,0 +1,32 @@
+.darkWrapper,
+.lightWrapper {
+  flex-basis: 33%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.innerWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 2.4rem;
+}
+
+.title {
+  font-size: var(--size-preset-4);
+}
+
+.value {
+  font-size: var(--size-preset-1);
+  font-weight: bold;
+}
+
+.darkWrapper {
+  background-color: var(--color-grey-900);
+  color: var(--color-white);
+}
+
+.lightWrapper {
+  background-color: var(--color-white);
+  color: var(--color-grey-900);
+}
