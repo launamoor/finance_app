@@ -3,6 +3,8 @@ import React from "react";
 import styles from "./styles/OverviewWrapper.module.css";
 import { useDataContext } from "@/contexts/dataContext";
 import OverviewDivCard from "./OverviewDivCard";
+import OverviewGrid from "./OverviewGrid";
+import OverviewPotsCard from "./OverviewPotsCard";
 
 const OverviewWrapper = () => {
   const { data } = useDataContext();
@@ -39,6 +41,9 @@ const OverviewWrapper = () => {
             })}
           />
         </div>
+        <OverviewGrid>
+          <OverviewPotsCard />
+        </OverviewGrid>
       </div>
     </div>
   );

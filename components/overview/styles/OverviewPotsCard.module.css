@@ -1,0 +1,97 @@
+.outerWrapper {
+  padding: 3.2rem;
+  background-color: var(--color-white);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.innerWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.titleFlex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.potsTitle {
+  font-size: var(--size-preset-2);
+  color: var(--color-grey-900);
+}
+
+.detailsButton:link,
+.detailsButton:visited {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  text-decoration: none;
+}
+
+.detailsButton p {
+  font-size: var(--size-preset-4);
+  color: var(--color-grey-500);
+  transition: all 0.5s ease;
+}
+
+.detailsButtonIcon {
+  fill: var(--color-grey-500);
+  transition: all 0.5s ease;
+}
+
+.detailsButton:hover p {
+  color: var(--color-grey-900);
+}
+
+.detailsButton:hover .detailsButtonIcon {
+  fill: var(--color-grey-900);
+}
+
+.contentFlex {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.totalOuterWrapper {
+  padding: 1.6rem;
+  background-color: var(--color-beige-100);
+  border-radius: 12px;
+  overflow: hidden;
+  flex-basis: 40%;
+}
+
+.totalInnerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.6rem;
+}
+
+.totalSaved {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.totalTitle {
+  font-size: var(--size-preset-4);
+  color: var(--color-grey-500);
+}
+
+.totalAmount {
+  font-size: var(--size-preset-1);
+  font-weight: bold;
+  color: var(--color-grey-900);
+}
+
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  column-gap: 1.6rem;
+  row-gap: 1.6rem;
+  width: 100%;
+}

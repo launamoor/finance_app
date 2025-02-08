@@ -1,0 +1,27 @@
+.outerWrapper {
+  display: flex;
+}
+
+.bar {
+  width: 4px;
+  height: 100%;
+  margin-right: 1.6rem;
+  border-radius: 8px;
+}
+
+.textFlex {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.title {
+  font-size: var(--size-preset-5);
+  color: var(--color-grey-500);
+}
+
+.amount {
+  font-size: var(--size-preset-4);
+  font-weight: bold;
+  color: var(--color-grey-900);
+}
