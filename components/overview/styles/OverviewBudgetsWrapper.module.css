@@ -1,0 +1,25 @@
+.innerWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.titleFlex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: var(--size-preset-2);
+  color: var(--color-grey-900);
+}
+
+.chartContainer {
+  height: 300px;
+  width: 300px;
+  display: flex;
+  border-radius: 50%;
+  overflow: hidden;
+  /* background-image: conic-gradient(red 0 30%, green 30% 70%, blue 70% 100%); */
+}

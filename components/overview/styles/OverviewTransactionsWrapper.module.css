@@ -1,0 +1,64 @@
+.innerWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.titleFlex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.transactionsTitle {
+  font-size: var(--size-preset-2);
+  color: var(--color-grey-900);
+}
+
+.transactionsFlex {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.singleTransactionFlex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.avatarFlex {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.amountFlex {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.8rem;
+}
+
+.avatar {
+  max-height: 4rem;
+  max-width: 4rem;
+  border-radius: 50%;
+}
+
+.name {
+  font-size: var(--size-preset-4);
+  font-weight: bold;
+  color: var(--color-grey-900);
+}
+
+.amount {
+  font-size: var(--size-preset-4);
+  font-weight: bold;
+  color: var(--color-green);
+}
+
+.date {
+  font-size: var(--size-preset-5);
+  color: var(--color-grey-500);
+}

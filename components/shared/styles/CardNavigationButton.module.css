@@ -1,0 +1,26 @@
+.detailsButton:link,
+.detailsButton:visited {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  text-decoration: none;
+}
+
+.detailsButton p {
+  font-size: var(--size-preset-4);
+  color: var(--color-grey-500);
+  transition: all 0.5s ease;
+}
+
+.detailsButtonIcon {
+  fill: var(--color-grey-500);
+  transition: all 0.5s ease;
+}
+
+.detailsButton:hover p {
+  color: var(--color-grey-900);
+}
+
+.detailsButton:hover .detailsButtonIcon {
+  fill: var(--color-grey-900);
+}

@@ -5,6 +5,9 @@ import { useDataContext } from "@/contexts/dataContext";
 import OverviewDivCard from "./OverviewDivCard";
 import OverviewGrid from "./OverviewGrid";
 import OverviewPotsCard from "./OverviewPotsCard";
+import OverviewBudgetsWrapper from "./OverviewBudgetsWrapper";
+import OverviewTransactionsWrapper from "./OverviewTransactionsWrapper";
+import OverviewRecurringBillsWrapper from "./OverviewRecurringBillsWrapper";
 
 const OverviewWrapper = () => {
   const { data } = useDataContext();
@@ -43,6 +46,9 @@ const OverviewWrapper = () => {
         </div>
         <OverviewGrid>
           <OverviewPotsCard />
+          <OverviewBudgetsWrapper />
+          <OverviewTransactionsWrapper />
+          <OverviewRecurringBillsWrapper />
         </OverviewGrid>
       </div>
     </div>

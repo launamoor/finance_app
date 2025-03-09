@@ -1,9 +1,11 @@
 import React from "react";
 import styles from "./styles/OverviewPotsCard.module.css";
-import IconCaretRight from "../shared/IconComponents/IconCaretRight";
+import CardNavigationButton from "../shared/CardNavigationButton";
 import IconPot from "../shared/IconComponents/IconPot";
 import PotsSummaryCell from "./PotsSummaryCell";
 import { useDataContext } from "@/contexts/dataContext";
+
+// TODO: Pull in data from the DataContext and display the pots
 
 const OverviewPotsCard = () => {
   const { data } = useDataContext();
@@ -13,10 +15,7 @@ const OverviewPotsCard = () => {
       <div className={styles.innerWrapper}>
         <div className={styles.titleFlex}>
           <h3 className={styles.potsTitle}>Pots</h3>
-          <a href="/" className={styles.detailsButton}>
-            <p>See Details</p>
-            <IconCaretRight className={styles.detailsButtonIcon} />
-          </a>
+          <CardNavigationButton name={"See Details"} target="/" />
         </div>
         <div className={styles.contentFlex}>
           <div className={styles.totalOuterWrapper}>
@@ -31,9 +30,9 @@ const OverviewPotsCard = () => {
             </div>
           </div>
           <div className={styles.summaryGrid}>
-            {potsToDisplay?.map((pot) => (
+            {potsToDisplay?.map((pot, i) => (
               <PotsSummaryCell
-                key={pot.id}
+                key={i}
                 barColor={pot.theme}
                 summaryCellTitle={pot.name}
                 summaryCellAmount={pot.total.toLocaleString("en-US", {
