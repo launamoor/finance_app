@@ -1,3 +1,7 @@
+.wrapper {
+  grid-column: 1;
+}
+
 .innerWrapper {
   display: flex;
   flex-direction: column;
@@ -52,10 +56,16 @@
   color: var(--color-grey-900);
 }
 
-.amount {
+.positiveAmount {
   font-size: var(--size-preset-4);
   font-weight: bold;
   color: var(--color-green);
+}
+
+.negativeAmount {
+  font-size: var(--size-preset-4);
+  font-weight: bold;
+  color: var(--color-grey-900);
 }
 
 .date {

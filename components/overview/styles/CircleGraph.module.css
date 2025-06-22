@@ -1,0 +1,32 @@
+.outerWrapper {
+  height: 24rem;
+  width: 24rem;
+  /* background-color: red; */
+  border-radius: 50%;
+  position: relative;
+}
+
+.outerWrapper::after {
+  content: "";
+  height: 16.5rem;
+  width: 16.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--color-white);
+  border-radius: 50%;
+}
+
+.outerWrapper::before {
+  content: "";
+  height: 18.5rem;
+  width: 18.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--color-white);
+  opacity: 50%;
+  border-radius: 50%;
+}

@@ -15,11 +15,45 @@
   color: var(--color-grey-900);
 }
 
-.chartContainer {
-  height: 300px;
-  width: 300px;
+.graphFlex {
   display: flex;
-  border-radius: 50%;
-  overflow: hidden;
-  /* background-image: conic-gradient(red 0 30%, green 30% 70%, blue 70% 100%); */
+  align-items: center;
+  justify-content: space-around;
+}
+
+.budgetWrapper,
+.budgetFlex {
+  display: flex;
+  flex-direction: column;
+}
+
+.budgetWrapper {
+  gap: 1.6rem;
+}
+
+.budgetTitle {
+  font-size: var(--size-preset-5);
+  color: var(--color-grey-500);
+}
+
+.budgetAmount {
+  font-size: var(--size-preset-4);
+  color: var(--color-grey-900);
+  font-weight: bold;
+}
+
+.budgetFlex {
+  position: relative;
+  gap: 0.5rem;
+}
+
+.budgetFlex::after {
+  content: "";
+  height: 100%;
+  width: 5%;
+  position: absolute;
+  top: 0;
+  left: -20%;
+  background-color: var(--budget-theme);
+  border-radius: 8px;
 }

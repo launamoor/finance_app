@@ -3,6 +3,7 @@ import styles from "./styles/OverviewBudgetsWrapper.module.css";
 import CardWrapper from "../shared/CardWrapper";
 import CardNavigationButton from "../shared/CardNavigationButton";
 import { useDataContext } from "@/contexts/dataContext";
+import CircleGraph from "./CircleGraph";
 
 const OverviewBudgetsWrapper = () => {
   const { data } = useDataContext();
@@ -28,14 +29,11 @@ const OverviewBudgetsWrapper = () => {
 
     if (budgets && totalBudget) {
       const percentages = percentageCalculator(budgets);
-      console.log("Calculating percentages", percentages);
       setPercentages(percentages);
     }
   }, [data]);
 
-  useEffect(() => {
-    console.log("Updated percentages", percentages);
-  }, [percentages]);
+  if (!data || !percentages) return null;
 
   return (
     <CardWrapper>
@@ -44,21 +42,26 @@ const OverviewBudgetsWrapper = () => {
           <h3 className={styles.title}>Budgets</h3>
           <CardNavigationButton name="See Details" target="/" />
         </div>
-        <div
-          className={styles.chartContainer}
-          style={
-            percentages && {
-              backgroundImage: `conic-gradient(red 0 ${percentages[0]}%,
-              blue ${percentages[0]}% ${percentages[1] + percentages[0]}%,
-              green ${percentages[1] + percentages[0]}% ${
-                percentages[2] + percentages[1] + percentages[0]
-              }%,
-              yellow ${
-                percentages[2] + percentages[1] + percentages[0]
-              }% 100%)`,
-            }
-          }
-        ></div>
+        <div className={styles.graphFlex}>
+          <CircleGraph percentages={percentages} budgetsData={data.budgets} />
+          <div className={styles.budgetWrapper}>
+            {data.budgets?.map((budget) => (
+              <div
+                style={{ "--budget-theme": budget.theme }}
+                key={budget.category}
+                className={styles.budgetFlex}
+              >
+                <div className={styles.budgetTitle}>{budget.category}</div>
+                <div className={styles.budgetAmount}>
+                  {new Intl.NumberFormat("en-US", {
+                    style: "currency",
+                    currency: "USD",
+                  }).format(budget.maximum)}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </CardWrapper>
   );

@@ -57,7 +57,19 @@ const OverviewTransactionsWrapper = () => {
                   <p className={styles.name}>{transaction.name}</p>
                 </div>
                 <div className={styles.amountFlex}>
-                  <div className={styles.amount}>+${transaction.amount}</div>
+                  <div
+                    className={
+                      transaction.amount > 0
+                        ? styles.positiveAmount
+                        : styles.negativeAmount
+                    }
+                  >
+                    {transaction.amount > 0 ? "+" : "-"}
+                    {new Intl.NumberFormat("en-IN", {
+                      style: "currency",
+                      currency: "USD",
+                    }).format(Math.abs(transaction.amount))}
+                  </div>
                   <div className={styles.date}>
                     {dateFormatter(transaction.date)}
                   </div>

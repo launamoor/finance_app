@@ -1,0 +1,22 @@
+.wrapper {
+  height: 24rem;
+  width: 24rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  font-size: 4rem;
+  animation: rotate 1s infinite;
+  color: var(--color-blue);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

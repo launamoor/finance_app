@@ -1,6 +1,28 @@
-.wrapper {
+/* .wrapper {
   display: grid;
   grid-template-columns: 55% 45%;
   column-gap: 2.4rem;
   row-gap: 2.4rem;
+} */
+
+.flexWrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  gap: 2.4rem;
+}
+
+.leftCol {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 60%;
+  gap: 2.4rem;
+}
+
+.rightCol {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 40%;
+  gap: 2.4rem;
 }
