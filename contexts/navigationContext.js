@@ -1,9 +1,13 @@
+"use client";
 import React, { createContext, useState, useContext } from "react";
+import { usePathname } from "next/navigation";
 
 const NavigationContext = createContext();
 
 export const NavigationProvider = ({ children }) => {
-  const [activeTab, setActiveTab] = useState("overview");
+  const pathname = usePathname();
+
+  const [activeTab, setActiveTab] = useState(pathname);
 
   return (
     <NavigationContext.Provider

@@ -40,7 +40,7 @@ const OverviewTransactionsWrapper = () => {
       <div className={styles.innerWrapper}>
         <div className={styles.titleFlex}>
           <h3 className={styles.transactionsTitle}>Transactions</h3>
-          <CardNavigationButton name="View All" target="/" />
+          <CardNavigationButton name="View All" target="/transactions" />
         </div>
         <div className={styles.transactionsFlex}>
           {transactions?.map((transaction, i) => {

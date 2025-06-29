@@ -17,7 +17,7 @@ const OverviewPotsCard = () => {
         <div className={styles.innerWrapper}>
           <div className={styles.titleFlex}>
             <h3 className={styles.potsTitle}>Pots</h3>
-            <CardNavigationButton name={"See Details"} target="/" />
+            <CardNavigationButton name={"See Details"} target="/pots" />
           </div>
           <div className={styles.contentFlex}>
             <div className={styles.totalOuterWrapper}>

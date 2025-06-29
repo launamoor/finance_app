@@ -10,6 +10,7 @@ import NavBudgetsIcon from "./IconComponents/NavBudgetsIcon";
 import NavPotsIcon from "./IconComponents/NavPotsIcon";
 import NavReccuringBillsIcon from "./IconComponents/NavReccuringBillsIcon";
 import MinimizeButtonIcon from "./IconComponents/MinimizeButtonIcon";
+import { useRouter, usePathname } from "next/navigation";
 
 import { useState } from "react";
 import { useNavigationContext } from "@/contexts/navigationContext";
@@ -17,10 +18,21 @@ import { useNavigationContext } from "@/contexts/navigationContext";
 const Sidebar = () => {
   const [sidebarHidden, setSidebarHidden] = useState(false);
 
+  const router = useRouter();
+  const pathname = usePathname();
+
   const { activeTab, setActiveTab } = useNavigationContext();
 
   const handleTabChange = (e) => {
-    setActiveTab(e.currentTarget.id);
+    const target = e.currentTarget.id;
+    const path = target === "overview" ? "/" : `/${target}`;
+    setActiveTab(target);
+
+    router.push(path);
+  };
+
+  const isActive = (tab) => {
+    return tab === "overview" ? pathname === "/" : pathname === `${tab}`;
   };
 
   const toggleSidebar = () => {
@@ -50,7 +62,7 @@ const Sidebar = () => {
                 id="overview"
                 onClick={handleTabChange}
                 className={
-                  activeTab === "overview"
+                  isActive("overview")
                     ? styles.navButtonActive
                     : styles.navButton
                 }
@@ -66,7 +78,7 @@ const Sidebar = () => {
                 id="transactions"
                 onClick={handleTabChange}
                 className={
-                  activeTab === "transactions"
+                  isActive("/transactions")
                     ? styles.navButtonActive
                     : styles.navButton
                 }
@@ -82,7 +94,7 @@ const Sidebar = () => {
                 id="budgets"
                 onClick={handleTabChange}
                 className={
-                  activeTab === "budgets"
+                  isActive("/budgets")
                     ? styles.navButtonActive
                     : styles.navButton
                 }
@@ -98,9 +110,7 @@ const Sidebar = () => {
                 id="pots"
                 onClick={handleTabChange}
                 className={
-                  activeTab === "pots"
-                    ? styles.navButtonActive
-                    : styles.navButton
+                  isActive("/pots") ? styles.navButtonActive : styles.navButton
                 }
               >
                 <NavPotsIcon />
@@ -114,9 +124,7 @@ const Sidebar = () => {
                 id="bills"
                 onClick={handleTabChange}
                 className={
-                  activeTab === "bills"
-                    ? styles.navButtonActive
-                    : styles.navButton
+                  isActive("/bills") ? styles.navButtonActive : styles.navButton
                 }
               >
                 <NavReccuringBillsIcon />

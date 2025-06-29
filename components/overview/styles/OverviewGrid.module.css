@@ -11,6 +11,8 @@
   width: 100%;
   justify-content: space-between;
   gap: 2.4rem;
+
+  max-height: fit-content;
 }
 
 .leftCol {

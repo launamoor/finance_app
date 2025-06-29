@@ -40,7 +40,7 @@ const OverviewBudgetsWrapper = () => {
       <div className={styles.innerWrapper}>
         <div className={styles.titleFlex}>
           <h3 className={styles.title}>Budgets</h3>
-          <CardNavigationButton name="See Details" target="/" />
+          <CardNavigationButton name="See Details" target="/budgets" />
         </div>
         <div className={styles.graphFlex}>
           <CircleGraph percentages={percentages} budgetsData={data.budgets} />

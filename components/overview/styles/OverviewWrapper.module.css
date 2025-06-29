@@ -1,6 +1,6 @@
 .outerWrapper {
   background-color: var(--color-beige-100);
-  height: 100%;
+  height: 100vh;
 }
 
 .innerWrapper {

@@ -1,0 +1,43 @@
+.innerWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.titleFlex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.billsTitle {
+  font-size: var(--size-preset-2);
+  color: var(--color-grey-900);
+}
+
+.cardsFlex {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 1.6rem;
+  background-color: var(--color-beige-100);
+  border-radius: 8px;
+  border-left: solid 4px;
+}
+
+.cardTitle {
+  font-size: var(--size-preset-4);
+  color: var(--color-grey-500);
+}
+
+.cardAmount {
+  font-size: var(--size-preset-4);
+  color: var(--color-grey-900);
+  font-weight: bold;
+}
