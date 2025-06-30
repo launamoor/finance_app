@@ -10,7 +10,7 @@ const OverviewRecurringBillsWrapper = () => {
 
   if (!data) return <LoadingSpinner />;
   return (
-    <CardWrapper>
+    <CardWrapper className={""}>
       <div className={styles.outerWrapper}>
         <div className={styles.innerWrapper}>
           <div className={styles.titleFlex}>

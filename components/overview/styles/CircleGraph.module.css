@@ -29,3 +29,26 @@
   opacity: 50%;
   border-radius: 50%;
 }
+
+.graphFlex {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+}
+
+.graphFlexLeft {
+  font-size: var(--size-preset-1);
+  color: var(--color-grey-900);
+  font-weight: bold;
+}
+
+.graphFlexLimit {
+  font-size: var(--size-preset-5);
+  color: var(--color-grey-500);
+}

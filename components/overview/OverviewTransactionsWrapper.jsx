@@ -5,6 +5,7 @@ import CardWrapper from "../shared/CardWrapper";
 import CardNavigationButton from "../shared/CardNavigationButton";
 import Image from "next/image";
 import { useDataContext } from "@/contexts/dataContext";
+import Divider from "./Divider";
 
 // TODO: Button navigation is not working
 
@@ -45,35 +46,38 @@ const OverviewTransactionsWrapper = () => {
         <div className={styles.transactionsFlex}>
           {transactions?.map((transaction, i) => {
             return (
-              <div key={i} className={styles.singleTransactionFlex}>
-                <div className={styles.avatarFlex}>
-                  <Image
-                    src={transaction.avatar}
-                    alt={`Avatar of ${transaction.name}`}
-                    className={styles.avatar}
-                    width={40}
-                    height={40}
-                  />
-                  <p className={styles.name}>{transaction.name}</p>
-                </div>
-                <div className={styles.amountFlex}>
-                  <div
-                    className={
-                      transaction.amount > 0
-                        ? styles.positiveAmount
-                        : styles.negativeAmount
-                    }
-                  >
-                    {transaction.amount > 0 ? "+" : "-"}
-                    {new Intl.NumberFormat("en-IN", {
-                      style: "currency",
-                      currency: "USD",
-                    }).format(Math.abs(transaction.amount))}
+              <div key={i}>
+                <div className={styles.singleTransactionFlex}>
+                  <div className={styles.avatarFlex}>
+                    <Image
+                      src={transaction.avatar}
+                      alt={`Avatar of ${transaction.name}`}
+                      className={styles.avatar}
+                      width={40}
+                      height={40}
+                    />
+                    <p className={styles.name}>{transaction.name}</p>
                   </div>
-                  <div className={styles.date}>
-                    {dateFormatter(transaction.date)}
+                  <div className={styles.amountFlex}>
+                    <div
+                      className={
+                        transaction.amount > 0
+                          ? styles.positiveAmount
+                          : styles.negativeAmount
+                      }
+                    >
+                      {transaction.amount > 0 ? "+" : "-"}
+                      {new Intl.NumberFormat("en-IN", {
+                        style: "currency",
+                        currency: "USD",
+                      }).format(Math.abs(transaction.amount))}
+                    </div>
+                    <div className={styles.date}>
+                      {dateFormatter(transaction.date)}
+                    </div>
                   </div>
                 </div>
+                {i < transactions.length - 1 ? <Divider /> : null}
               </div>
             );
           })}

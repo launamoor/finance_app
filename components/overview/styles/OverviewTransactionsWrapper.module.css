@@ -22,13 +22,14 @@
 .transactionsFlex {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  /* gap: 2rem; */
 }
 
 .singleTransactionFlex {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0.7rem 0;
 }
 
 .avatarFlex {

@@ -36,7 +36,7 @@ const OverviewBudgetsWrapper = () => {
   if (!data || !percentages) return null;
 
   return (
-    <CardWrapper>
+    <CardWrapper className={""}>
       <div className={styles.innerWrapper}>
         <div className={styles.titleFlex}>
           <h3 className={styles.title}>Budgets</h3>

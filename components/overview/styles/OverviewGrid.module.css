@@ -18,13 +18,13 @@
 .leftCol {
   display: flex;
   flex-direction: column;
-  flex-basis: 60%;
+  flex-basis: 55%;
   gap: 2.4rem;
 }
 
 .rightCol {
   display: flex;
   flex-direction: column;
-  flex-basis: 40%;
+  flex-basis: 45%;
   gap: 2.4rem;
 }

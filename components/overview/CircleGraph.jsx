@@ -5,6 +5,8 @@ import LoadingSpinner from "../shared/LoadingSpinner";
 const CircleGraph = ({ percentages, budgetsData }) => {
   if (!budgetsData || !percentages) return <LoadingSpinner />;
 
+  const budgetsTotal = budgetsData.reduce((acc, curr) => acc + curr.maximum, 0);
+
   const calculateSlices = percentages.reduce(
     (acc, curr, index) => {
       const start = acc.lastStop;
@@ -20,7 +22,12 @@ const CircleGraph = ({ percentages, budgetsData }) => {
   const slices = `conic-gradient(${calculateSlices.result.join(", ")})`;
 
   return (
-    <div style={{ background: slices }} className={styles.outerWrapper}></div>
+    <div style={{ background: slices }} className={styles.outerWrapper}>
+      <div className={styles.graphFlex}>
+        <div className={styles.graphFlexLeft}>$338</div>
+        <div className={styles.graphFlexLimit}>of ${budgetsTotal} limit</div>
+      </div>
+    </div>
   );
 };
 

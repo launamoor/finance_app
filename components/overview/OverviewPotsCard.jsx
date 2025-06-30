@@ -12,7 +12,7 @@ const OverviewPotsCard = () => {
   const { data } = useDataContext();
   const potsToDisplay = data?.pots?.slice(0, 4);
   return (
-    <CardWrapper>
+    <CardWrapper className={""}>
       <div className={styles.outerWrapper}>
         <div className={styles.innerWrapper}>
           <div className={styles.titleFlex}>
